@@ -12,10 +12,8 @@
       --bg: #050b18;
       --bg-soft: #081220;
       --card: rgba(15, 23, 42, 0.76);
-      --card-strong: rgba(15, 23, 42, 0.94);
       --text: #f8fafc;
       --muted: #94a3b8;
-      --line: rgba(96, 165, 250, 0.18);
       --blue: #3b82f6;
       --cyan: #06b6d4;
       --sky: #60a5fa;
@@ -57,13 +55,15 @@
 
     .navbar {
       width: 100%;
-      height: 78px;
+      height: 86px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 7%;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-      background: rgba(5, 11, 24, 0.76);
+      border-bottom: 1px solid rgba(96, 165, 250, 0.12);
+      background:
+        linear-gradient(90deg, rgba(5, 11, 24, 0.96), rgba(8, 18, 32, 0.92)),
+        radial-gradient(circle at left, rgba(6, 182, 212, 0.12), transparent 34%);
       backdrop-filter: blur(18px);
       position: sticky;
       top: 0;
@@ -73,34 +73,27 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       object-fit: cover;
-      border: 1px solid rgba(96, 165, 250, 0.3);
-      box-shadow: 0 0 28px rgba(6, 182, 212, 0.18);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      box-shadow: 0 0 26px rgba(6, 182, 212, 0.22);
     }
 
     .brand-text h1 {
-      font-size: 1.15rem;
+      font-size: 1.42rem;
       line-height: 1;
-      font-weight: 900;
-      letter-spacing: -0.03em;
+      font-weight: 950;
+      letter-spacing: -0.04em;
     }
 
     .brand-text h1 span {
       color: var(--sky);
-    }
-
-    .brand-text p {
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 0.74rem;
-      font-weight: 600;
     }
 
     .nav-links {
@@ -108,8 +101,8 @@
       align-items: center;
       gap: 34px;
       color: #cbd5e1;
-      font-weight: 800;
-      font-size: 0.95rem;
+      font-weight: 850;
+      font-size: 0.98rem;
     }
 
     .nav-links a:hover {
@@ -117,12 +110,13 @@
     }
 
     .nav-cta {
-      padding: 12px 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(6, 182, 212, 0.36);
+      margin-left: 18px;
+      padding: 13px 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(6, 182, 212, 0.34);
       color: #67e8f9;
-      background: rgba(6, 182, 212, 0.06);
-      box-shadow: 0 0 28px rgba(6, 182, 212, 0.10);
+      background: rgba(6, 182, 212, 0.08);
+      box-shadow: 0 0 28px rgba(6, 182, 212, 0.12);
     }
 
     .hero {
@@ -131,18 +125,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 7% 40px;
+      padding: 40px 7%;
       position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 10% 6% 10%;
-      height: 170px;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.13), transparent 65%);
-      pointer-events: none;
-      filter: blur(8px);
     }
 
     .hero-content {
@@ -154,8 +138,6 @@
 
     .eyebrow {
       display: inline-flex;
-      align-items: center;
-      justify-content: center;
       color: #22d3ee;
       background: rgba(15, 23, 42, 0.76);
       border: 1px solid rgba(96, 165, 250, 0.24);
@@ -214,7 +196,6 @@
       padding: 16px 24px;
       border-radius: 16px;
       font-weight: 950;
-      letter-spacing: -0.02em;
       transition: 0.2s ease;
     }
 
@@ -241,6 +222,35 @@
       letter-spacing: 0.18em;
       font-size: 0.75rem;
       text-transform: uppercase;
+    }
+
+    .features {
+      padding: 36px 7% 70px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(15, 23, 42, 0.48);
+      border: 1px solid rgba(96, 165, 250, 0.14);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .feature-card h3 {
+      color: #38bdf8;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      line-height: 1.55;
     }
 
     .pricing-section {
@@ -299,20 +309,6 @@
       overflow: hidden;
     }
 
-    .pricing-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.11), transparent 42%);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .pricing-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
     .pricing-card.featured {
       border-color: rgba(6, 182, 212, 0.72);
       background:
@@ -331,7 +327,6 @@
 
     .plan-top h3 {
       font-size: 1.05rem;
-      margin: 0;
       color: #67e8f9;
       font-weight: 950;
     }
@@ -368,7 +363,6 @@
       color: var(--muted);
       font-size: 1rem;
       margin-left: 4px;
-      letter-spacing: -0.02em;
     }
 
     .plan-desc {
@@ -380,7 +374,6 @@
 
     .pricing-card ul {
       list-style: none;
-      padding: 0;
       margin: 24px 0 28px;
       min-height: 184px;
     }
@@ -403,7 +396,6 @@
       display: block;
       width: 100%;
       text-align: center;
-      text-decoration: none;
       padding: 15px 18px;
       border-radius: 15px;
       font-weight: 950;
@@ -420,39 +412,6 @@
       border: 1px solid rgba(96, 165, 250, 0.34);
       color: var(--text);
       background: rgba(15, 23, 42, 0.62);
-    }
-
-    .plan-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .features {
-      padding: 70px 7% 80px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-    .feature-card {
-      background: rgba(15, 23, 42, 0.48);
-      border: 1px solid rgba(96, 165, 250, 0.14);
-      border-radius: 22px;
-      padding: 26px;
-    }
-
-    .feature-card h3 {
-      color: #38bdf8;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-
-    .feature-card p {
-      color: var(--muted);
-      line-height: 1.55;
     }
 
     .footer {
@@ -494,7 +453,7 @@
 
       .hero {
         min-height: 72vh;
-        padding: 44px 6% 44px;
+        padding: 44px 6%;
       }
 
       .eyebrow {
@@ -531,10 +490,6 @@
         grid-template-columns: 1fr;
       }
 
-      .pricing-section {
-        padding-top: 56px;
-      }
-
       .pricing-card ul {
         min-height: auto;
       }
@@ -550,7 +505,6 @@
         <img src="assets/betlabiq-logo.png" alt="BetLabIQ logo" class="brand-mark" />
         <div class="brand-text">
           <h1>BetLab<span>IQ</span></h1>
-          <p>Daily picks, simplified</p>
         </div>
       </a>
 
@@ -558,7 +512,7 @@
         <a href="#features">Why Us</a>
         <a href="#pricing">Pricing</a>
         <a href="https://whop.com/betlabiq" target="_blank" rel="noopener">Join</a>
-        <a class="nav-cta" href="https://whop.com/betlabiq" target="_blank" rel="noopener">Get Free Picks</a>
+        <a class="nav-cta" href="https://whop.com/betlabiq" target="_blank" rel="noopener">See All Plans</a>
       </nav>
     </header>
 
@@ -594,12 +548,34 @@
         </div>
       </section>
 
+      <section id="features" class="features">
+        <div class="feature-card">
+          <h3>Data Driven</h3>
+          <p>Every pick is backed by research, market context, and a repeatable process.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Advanced Models</h3>
+          <p>Model-backed insights built to simplify the daily betting board.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Proven Results</h3>
+          <p>Transparent tracking, confidence ratings, and consistent accountability.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Community</h3>
+          <p>Built for serious bettors who want sharper research and better discussion.</p>
+        </div>
+      </section>
+
       <section id="pricing" class="pricing-section">
         <div class="pricing-header">
           <p class="section-kicker">BETLABIQ MEMBERSHIPS</p>
           <h2>Choose Your Edge</h2>
           <p>
-            Start free. Upgrade when you want deeper research, premium Discord access,
+            Start free. Upgrade when you want deeper research, premium Whop access,
             stronger model-backed picks, and a sharper daily betting process.
           </p>
         </div>
@@ -640,7 +616,7 @@
             <div class="price">$20<span>/week</span></div>
 
             <p class="plan-desc">
-              Best for testing the premium side before committing to a full month.
+              Best for testing premium access before committing to a full month.
             </p>
 
             <ul>
@@ -706,28 +682,6 @@
             </a>
           </article>
 
-        </div>
-      </section>
-
-      <section id="features" class="features">
-        <div class="feature-card">
-          <h3>Data Driven</h3>
-          <p>Every pick is backed by research, market context, and a repeatable process.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Advanced Models</h3>
-          <p>Model-backed insights built to simplify the daily betting board.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Proven Results</h3>
-          <p>Transparent tracking, confidence ratings, and consistent accountability.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Community</h3>
-          <p>Built for serious bettors who want sharper research and better discussion.</p>
         </div>
       </section>
     </main>
