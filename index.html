@@ -4,85 +4,726 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BetLabIQ | Smarter Data. Stronger Profits.</title>
-  <meta name="description" content="BetLabIQ delivers data-driven sports analytics, free Discord picks, premium research, and model-backed betting insights." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    :root {
+      --bg: #050b18;
+      --bg-soft: #081220;
+      --card: rgba(15, 23, 42, 0.76);
+      --card-strong: rgba(15, 23, 42, 0.94);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --line: rgba(96, 165, 250, 0.18);
+      --blue: #3b82f6;
+      --cyan: #06b6d4;
+      --sky: #60a5fa;
+      --gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(6, 182, 212, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 40%, rgba(59, 130, 246, 0.10), transparent 32%),
+        linear-gradient(180deg, #050b18 0%, #020617 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+      background-image:
+        linear-gradient(rgba(96, 165, 250, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 165, 250, 0.045) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    .navbar {
+      width: 100%;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(5, 11, 24, 0.76);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      box-shadow: 0 0 28px rgba(6, 182, 212, 0.18);
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text h1 span {
+      color: var(--sky);
+    }
+
+    .brand-text p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      color: #cbd5e1;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-cta {
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(6, 182, 212, 0.36);
+      color: #67e8f9;
+      background: rgba(6, 182, 212, 0.06);
+      box-shadow: 0 0 28px rgba(6, 182, 212, 0.10);
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 72px 7% 56px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 10% 6% 10%;
+      height: 190px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.13), transparent 65%);
+      pointer-events: none;
+      filter: blur(8px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #22d3ee;
+      background: rgba(15, 23, 42, 0.76);
+      border: 1px solid rgba(96, 165, 250, 0.24);
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 36px;
+      box-shadow: 0 0 36px rgba(6, 182, 212, 0.12);
+    }
+
+    .hero h2 {
+      font-size: clamp(4.2rem, 10vw, 7.6rem);
+      line-height: 0.86;
+      letter-spacing: -0.085em;
+      font-weight: 950;
+    }
+
+    .hero h2 .white {
+      color: var(--text);
+      display: block;
+    }
+
+    .hero h2 .gradient-text {
+      display: block;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-top: 14px;
+    }
+
+    .hero-subtitle {
+      max-width: 760px;
+      margin: 34px auto 0;
+      color: #b6c2d4;
+      font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      padding: 16px 24px;
+      border-radius: 16px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 18px 52px rgba(6, 182, 212, 0.24);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(96, 165, 250, 0.32);
+      background: rgba(15, 23, 42, 0.62);
+      color: #e2e8f0;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .sports-strip {
+      margin-top: 36px;
+      color: #94a3b8;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+    }
+
+    .pricing-section {
+      padding: 70px 7% 90px;
+      background:
+        radial-gradient(circle at top right, rgba(6, 182, 212, 0.14), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.12), transparent 35%),
+        rgba(2, 6, 23, 0.45);
+      border-top: 1px solid rgba(96, 165, 250, 0.12);
+    }
+
+    .pricing-header {
+      max-width: 850px;
+      margin: 0 auto 46px;
+      text-align: center;
+    }
+
+    .pricing-header .section-kicker {
+      color: #22d3ee;
+      font-weight: 950;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+    }
+
+    .pricing-header h2 {
+      color: var(--text);
+      font-size: clamp(2.7rem, 5.4vw, 5.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      margin: 16px 0 18px;
+    }
+
+    .pricing-header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(5, 11, 24, 0.96));
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      border-radius: 28px;
+      padding: 30px;
+      color: var(--text);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.11), transparent 42%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .pricing-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(6, 182, 212, 0.72);
+      background:
+        linear-gradient(180deg, rgba(6, 182, 212, 0.15), rgba(15, 23, 42, 0.96));
+      transform: translateY(-12px);
+      box-shadow: 0 30px 100px rgba(6, 182, 212, 0.15);
+    }
+
+    .plan-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 44px;
+    }
+
+    .plan-top h3 {
+      font-size: 1.05rem;
+      margin: 0;
+      color: #67e8f9;
+      font-weight: 950;
+    }
+
+    .plan-badge {
+      color: #03131e;
+      background: linear-gradient(135deg, #22d3ee, #60a5fa);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .plan-badge.free {
+      background: rgba(248, 250, 252, 0.11);
+      color: #f8fafc;
+      border: 1px solid rgba(248, 250, 252, 0.14);
+    }
+
+    .plan-badge.value {
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: white;
+    }
+
+    .price {
+      font-size: clamp(2.5rem, 4vw, 3.35rem);
+      font-weight: 950;
+      letter-spacing: -0.06em;
+      margin: 26px 0 14px;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-left: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .plan-desc {
+      color: #a7b4c7;
+      min-height: 76px;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 28px;
+      min-height: 184px;
+    }
+
+    .pricing-card li {
+      color: #cbd5e1;
+      margin: 13px 0;
+      line-height: 1.45;
+      font-size: 0.96rem;
+    }
+
+    .pricing-card li::before {
+      content: "✓";
+      color: var(--cyan);
+      font-weight: 950;
+      margin-right: 10px;
+    }
+
+    .plan-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      padding: 15px 18px;
+      border-radius: 15px;
+      font-weight: 950;
+      transition: 0.2s ease;
+    }
+
+    .plan-btn.primary {
+      background: var(--gradient);
+      color: var(--text);
+      box-shadow: 0 16px 46px rgba(6, 182, 212, 0.18);
+    }
+
+    .plan-btn.secondary {
+      border: 1px solid rgba(96, 165, 250, 0.34);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.62);
+    }
+
+    .plan-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .features {
+      padding: 70px 7% 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(15, 23, 42, 0.48);
+      border: 1px solid rgba(96, 165, 250, 0.14);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .feature-card h3 {
+      color: #38bdf8;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .footer {
+      padding: 34px 7%;
+      border-top: 1px solid rgba(96, 165, 250, 0.12);
+      color: #64748b;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 1150px) {
+      .pricing-grid,
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        height: auto;
+        padding: 18px 6%;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 0.88rem;
+      }
+
+      .hero {
+        min-height: 76vh;
+        padding-top: 56px;
+      }
+
+      .eyebrow {
+        font-size: 0.66rem;
+        padding: 9px 14px;
+        margin-bottom: 28px;
+      }
+
+      .hero h2 {
+        font-size: clamp(3.4rem, 18vw, 5.6rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .pricing-grid,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-section {
+        padding-top: 56px;
+      }
+
+      .pricing-card ul {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="site-shell">
-    <header class="nav">
-      <a class="brand" href="#">
-        <img src="assets/betlabiq-logo.png" alt="BetLabIQ logo" class="brand-logo" />
-        <span>BetLab<span>IQ</span></span>
+
+    <header class="navbar">
+      <a href="#" class="brand">
+        <img src="assets/betlabiq-logo.png" alt="BetLabIQ logo" class="brand-mark" />
+        <div class="brand-text">
+          <h1>BetLab<span>IQ</span></h1>
+          <p>Daily picks, simplified</p>
+        </div>
       </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#picks">Picks</a>
-        <a href="#edge">Research</a>
+
+      <nav class="nav-links">
+        <a href="#features">Why Us</a>
         <a href="#pricing">Pricing</a>
+        <a href="https://discord.com/channels/1516963062089912382/1516963065902403616" target="_blank" rel="noopener">Join</a>
+        <a class="nav-cta" href="https://discord.com/channels/1516963062089912382/1516963065902403616" target="_blank" rel="noopener">Get Free Picks</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <div class="hero-glow hero-glow-one"></div>
-        <div class="hero-glow hero-glow-two"></div>
-
+      <section class="hero">
         <div class="hero-content">
-          <div class="pill">Data Driven • Research Backed • Built for Serious Bettors</div>
-          <h1>
-            Smarter Data.<br />
-            <span>Stronger Profits.</span>
-          </h1>
-          <p>
-            BetLabIQ turns advanced sports research into clear, confident betting insights — with free community picks and premium model-backed edges.
-          </p>
-          <div class="hero-buttons">
-            <a class="btn btn-secondary" href="https://discord.gg/YOUR-FREE-DISCORD" target="_blank" rel="noopener">Join Free Discord</a>
-            <a class="btn btn-primary" href="https://discord.gg/YOUR-PREMIUM-DISCORD" target="_blank" rel="noopener">Premium Discord</a>
+          <div class="eyebrow">
+            DATA DRIVEN • RESEARCH BACKED • BUILT FOR SERIOUS BETTORS
           </div>
-          <div class="sports-row" aria-label="Sports covered">
-            <span>MLB</span>
-            <span>WNBA</span>
-            <span>Soccer</span>
-            <span>UFC</span>
-            <span>NHL</span>
+
+          <h2>
+            <span class="white">Smarter Data.</span>
+            <span class="gradient-text">Stronger Profits.</span>
+          </h2>
+
+          <p class="hero-subtitle">
+            BetLabIQ turns advanced sports research into clear, confident betting insights —
+            with free community picks and premium model-backed plays.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-secondary" href="https://discord.com/channels/1516963062089912382/1516963065902403616" target="_blank" rel="noopener">
+              Join Free Discord
+            </a>
+            <a class="btn btn-primary" href="#pricing">
+              View Premium Plans
+            </a>
+          </div>
+
+          <div class="sports-strip">
+            MLB • WNBA • SOCCER • UFC • NHL
           </div>
         </div>
       </section>
 
-      <section class="credibility" id="edge">
-        <article>
-          <div class="icon">⌖</div>
-          <h3>Data Driven</h3>
-          <p>Every recommendation starts with research, matchup context, pricing, and edge.</p>
-        </article>
-        <article>
-          <div class="icon">▥</div>
-          <h3>Advanced Models</h3>
-          <p>Built around probability, implied odds, confidence tiers, and transparent reasoning.</p>
-        </article>
-        <article>
-          <div class="icon">✓</div>
-          <h3>Proven Process</h3>
-          <p>Clean analysis, disciplined picks, and a consistent framework for every slate.</p>
-        </article>
+      <section id="pricing" class="pricing-section">
+        <div class="pricing-header">
+          <p class="section-kicker">BETLABIQ MEMBERSHIPS</p>
+          <h2>Choose Your Edge</h2>
+          <p>
+            Start free. Upgrade when you want deeper research, premium Discord access,
+            stronger model-backed picks, and a sharper daily betting process.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <article class="pricing-card">
+            <div class="plan-top">
+              <h3>BetLabIQ Free</h3>
+              <span class="plan-badge free">Free</span>
+            </div>
+
+            <div class="price">$0</div>
+
+            <p class="plan-desc">
+              For new members who want to join the community and follow select free picks.
+            </p>
+
+            <ul>
+              <li>Free Discord access</li>
+              <li>Community discussion</li>
+              <li>Select free picks</li>
+              <li>Public updates</li>
+              <li>Best for new members</li>
+            </ul>
+
+            <a class="plan-btn secondary" href="https://discord.com/channels/1516963062089912382/1516963065902403616" target="_blank" rel="noopener">
+              Join Free Discord
+            </a>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="plan-top">
+              <h3>BetLabIQ Premium</h3>
+              <span class="plan-badge">Weekly</span>
+            </div>
+
+            <div class="price">$20<span>/week</span></div>
+
+            <p class="plan-desc">
+              Best for testing the premium side before committing to a full month.
+            </p>
+
+            <ul>
+              <li>Premium Discord access</li>
+              <li>Daily premium picks</li>
+              <li>Model-backed research</li>
+              <li>Confidence ratings</li>
+              <li>Short-term access</li>
+            </ul>
+
+            <a class="plan-btn primary" href="#" target="_blank" rel="noopener">
+              Start Premium
+            </a>
+          </article>
+
+          <article class="pricing-card">
+            <div class="plan-top">
+              <h3>BetLabIQ Members</h3>
+              <span class="plan-badge">Popular</span>
+            </div>
+
+            <div class="price">$50<span>/month</span></div>
+
+            <p class="plan-desc">
+              Best monthly value for active bettors who want consistent premium access.
+            </p>
+
+            <ul>
+              <li>Everything in Premium</li>
+              <li>Full monthly access</li>
+              <li>Deeper matchup notes</li>
+              <li>Premium member role</li>
+              <li>Best for active bettors</li>
+            </ul>
+
+            <a class="plan-btn primary" href="#" target="_blank" rel="noopener">
+              Start Members
+            </a>
+          </article>
+
+          <article class="pricing-card">
+            <div class="plan-top">
+              <h3>Premium Access</h3>
+              <span class="plan-badge value">Best Value</span>
+            </div>
+
+            <div class="price">$200<span>/year</span></div>
+
+            <p class="plan-desc">
+              The long-term plan for members who want the full BetLabIQ system.
+            </p>
+
+            <ul>
+              <li>Everything in Members</li>
+              <li>Yearly premium access</li>
+              <li>Best value pricing</li>
+              <li>Long-term model tracking</li>
+              <li>Future model releases</li>
+            </ul>
+
+            <a class="plan-btn primary" href="#" target="_blank" rel="noopener">
+              Start Yearly
+            </a>
+          </article>
+
+        </div>
       </section>
 
-      <section class="cta-card" id="picks">
-        <h2>Join the Lab. Beat the Books.</h2>
-        <p>Start free, track the research, and upgrade when you are ready for premium cards, deeper writeups, and model edges.</p>
-        <div class="hero-buttons">
-          <a class="btn btn-secondary" href="https://discord.gg/YOUR-FREE-DISCORD" target="_blank" rel="noopener">Join Free Discord</a>
-          <a class="btn btn-primary" href="https://discord.gg/YOUR-PREMIUM-DISCORD" target="_blank" rel="noopener">Premium Discord</a>
+      <section id="features" class="features">
+        <div class="feature-card">
+          <h3>Data Driven</h3>
+          <p>Every pick is backed by research, market context, and a repeatable process.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Advanced Models</h3>
+          <p>Model-backed insights built to simplify the daily betting board.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Proven Results</h3>
+          <p>Transparent tracking, confidence ratings, and consistent accountability.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Community</h3>
+          <p>Built for serious bettors who want sharper research and better discussion.</p>
         </div>
       </section>
     </main>
-  </div>
 
-  <footer>
-    <p>© 2026 BetLabIQ. Sports analytics intelligence.</p>
-  </footer>
+    <footer class="footer">
+      DATA DRIVEN • RESEARCH BACKED • RESULTS FOCUSED
+    </footer>
+
+  </div>
 </body>
 </html>
