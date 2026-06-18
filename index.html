@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BetLabIQ | Smarter Data. Stronger Profits.</title>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <title>BetLabIQ | Beat the Sportsbook. Powered by Data.</title>
+<!-- SEO -->
+<meta name="title" content="BetLabIQ | Smarter Data. Stronger Profits.">
+<meta name="description" content="Data-driven sports research, premium picks, model-backed betting insights, and a sharper betting community.">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://betlabiq.github.io/BetLabIQ/">
+<meta property="og:title" content="BetLabIQ | Smarter Data. Stronger Profits.">
+<meta property="og:description" content="Data-driven sports research, premium picks, model-backed betting insights, and a sharper betting community.">
+<meta property="og:image" content="https://betlabiq.github.io/BetLabIQ/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-  <!-- SEO -->
-  <meta name="title" content="BetLabIQ | Beat the Sportsbook. Powered by Data.">
-  <meta name="description" content="Daily model-backed sports picks, transparent results tracking, and premium betting insights built for disciplined bettors.">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://betlabiq.github.io/BetLabIQ/">
+<meta name="twitter:title" content="BetLabIQ | Smarter Data. Stronger Profits.">
+<meta name="twitter:description" content="Data-driven sports research, premium picks, model-backed betting insights, and a sharper betting community.">
+<meta name="twitter:image" content="https://betlabiq.github.io/BetLabIQ/assets/social-preview.png">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://betlabiq.github.io/BetLabIQ/">
-  <meta property="og:title" content="BetLabIQ | Beat the Sportsbook. Powered by Data.">
-  <meta property="og:description" content="Daily model-backed sports picks, transparent results tracking, and premium betting insights built for disciplined bettors.">
-  <meta property="og:image" content="https://betlabiq.github.io/BetLabIQ/assets/social-preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://betlabiq.github.io/BetLabIQ/">
-  <meta name="twitter:title" content="BetLabIQ | Beat the Sportsbook. Powered by Data.">
-  <meta name="twitter:description" content="Daily model-backed sports picks, transparent results tracking, and premium betting insights built for disciplined bettors.">
-  <meta name="twitter:image" content="https://betlabiq.github.io/BetLabIQ/assets/social-preview.png">
-
-  <meta name="theme-color" content="#050B18">
-
+<meta name="theme-color" content="#050B18">
   <style>
     :root {
       --bg: #050b18;
@@ -52,9 +49,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -105,18 +100,16 @@
       text-shadow: 0 0 22px rgba(96, 165, 250, 0.22);
     }
 
-    .brand span {
-      color: var(--sky);
-    }
+    .brand span { color: var(--sky); }
 
     .nav-links {
       justify-self: center;
       display: flex;
       align-items: center;
-      gap: 42px;
+      gap: 48px;
       color: #dbeafe;
       font-weight: 950;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
     }
 
     .nav-links a {
@@ -241,9 +234,7 @@
       color: #e2e8f0;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     .sports-strip {
       margin-top: 30px;
@@ -293,392 +284,504 @@
       font-size: 1.12rem;
     }
 
-    .section-tag {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: rgba(6, 182, 212, 0.12);
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      color: #38bdf8;
-      font-size: 0.8rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
+    .pricing-section {
+      padding: 84px 7% 100px;
+      background:
+        radial-gradient(circle at center top, rgba(6, 182, 212, 0.12), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 35%),
+        rgba(2, 6, 23, 0.45);
+      border-top: 1px solid rgba(96, 165, 250, 0.12);
     }
 
-    .process-section {
-      padding: 0 7% 90px;
-      max-width: 1400px;
+    .pricing-header {
+      max-width: 940px;
+      margin: 0 auto 54px;
+      text-align: center;
+    }
+
+    .pricing-header h2 {
+      color: var(--text);
+      font-size: clamp(2.9rem, 5.5vw, 5.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.075em;
+      margin-bottom: 20px;
+    }
+
+    .pricing-header h2 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .pricing-header p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .join-free-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(248, 250, 252, 0.12);
+      color: #f8fafc;
+      font-size: 0.95rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      max-width: 1450px;
       margin: 0 auto;
     }
 
-    .process-header {
-      text-align: center;
-      margin-bottom: 40px;
+    .pricing-card {
+      background: rgba(17, 24, 39, 0.84);
+      border: 1px solid rgba(248, 250, 252, 0.12);
+      border-radius: 28px;
+      padding: 30px;
+      color: var(--text);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      min-height: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .process-header h2 {
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      margin-bottom: 16px;
+    .pricing-card.featured {
+      border-color: rgba(6, 182, 212, 0.85);
+      background:
+        linear-gradient(160deg, rgba(59, 130, 246, 0.95), rgba(6, 182, 212, 0.72) 34%, rgba(17, 24, 39, 0.92) 62%);
+      box-shadow: 0 32px 100px rgba(6, 182, 212, 0.22);
+      transform: translateY(-14px);
+    }
+
+    .plan-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .plan-head h3 {
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+    }
+
+    .daily-badge {
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(248, 250, 252, 0.10);
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .pricing-card.featured .daily-badge {
+      background: rgba(248, 250, 252, 0.95);
+      color: #0369a1;
+    }
+
+    .plan-desc {
+      color: #b6c2d4;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 2.1rem;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+      margin: 12px 0 18px;
+    }
+
+    .price span {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-left: 4px;
+      font-weight: 700;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(248, 250, 252, 0.12);
+      margin: 18px 0;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pricing-card li {
+      color: #e2e8f0;
+      margin: 15px 0;
+      line-height: 1.45;
+      font-size: 0.98rem;
+      font-weight: 650;
+    }
+
+    .pricing-card li::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: rgba(148, 163, 184, 0.22);
+      color: #cbd5e1;
+      font-size: 0.72rem;
+      font-weight: 950;
+      margin-right: 10px;
+    }
+
+    .pricing-card.featured li::before {
+      background: rgba(99, 245, 184, 0.95);
+      color: #020617;
+    }
+
+    .plan-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: 950;
+      transition: 0.2s ease;
+      margin-top: 26px;
+    }
+
+    .plan-btn.dark {
+      background: rgba(248, 250, 252, 0.10);
+      color: #f8fafc;
+    }
+
+    .plan-btn.featured-btn {
+      background: linear-gradient(135deg, #3b82f6, #63f5b8);
+      color: #020617;
+    }
+
+    .plan-btn:hover { transform: translateY(-2px); }
+
+    .footer {
+      padding: 64px 7%;
+      background:
+        radial-gradient(circle at left, rgba(6, 182, 212, 0.13), transparent 34%),
+        linear-gradient(90deg, #050b18 0%, #081220 52%, #061527 100%);
+      border-top: 1px solid rgba(96, 165, 250, 0.14);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .footer-left { max-width: 790px; }
+
+    .footer-brand {
+      margin-bottom: 22px;
+      font-size: 1.8rem;
+      font-weight: 950;
       letter-spacing: -0.06em;
     }
 
-    .process-header p {
-      color: var(--muted);
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.7;
-      font-size: 1.12rem;
+    .footer-brand span { color: var(--sky); }
+
+    .footer p {
+      color: #94a3b8;
+      line-height: 1.55;
+      font-weight: 600;
     }
 
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+    .footer-socials {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .process-item {
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(96, 165, 250, 0.18);
+    .social-icon {
+      width: 56px;
+      height: 56px;
       border-radius: 18px;
-      padding: 22px;
-      text-align: center;
-      font-weight: 800;
+      display: grid;
+      place-items: center;
+      background: rgba(96, 165, 250, 0.10);
+      border: 1px solid rgba(96, 165, 250, 0.18);
       color: #e2e8f0;
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+      transition: 0.2s ease;
     }
 
-    <!-- FREE VS PREMIUM -->
+    .social-icon svg {
+      width: 23px;
+      height: 23px;
+      fill: currentColor;
+    }
 
-<section class="comparison-section">
+    .social-icon:hover {
+      transform: translateY(-2px);
+      background: rgba(6, 182, 212, 0.16);
+      color: #67e8f9;
+    }
 
-  <div class="comparison-header">
+    @media (max-width: 1150px) {
+      .features { grid-template-columns: repeat(2, 1fr); }
 
-    <span class="section-tag">
-      FREE VS PREMIUM
-    </span>
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+      }
 
-    <h2>
-      Start Free. Upgrade When You're Ready.
-    </h2>
+      .pricing-card.featured { transform: none; }
+    }
 
-    <p>
-      Join the free community, review our process, and upgrade when you're ready for the full experience.
-    </p>
+    @media (max-width: 760px) {
+      .navbar {
+        height: auto;
+        padding: 18px 6%;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
 
-  </div>
+      .brand,
+      .nav-links,
+      .nav-cta {
+        justify-self: center;
+      }
 
-  <div class="comparison-table">
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 0.92rem;
+      }
 
-    <div class="comparison-row comparison-top">
-      <div>Feature</div>
-      <div>Free</div>
-      <div>Premium</div>
-    </div>
+      .hero {
+        min-height: 72vh;
+        padding: 44px 6%;
+      }
 
-    <div class="comparison-row">
-      <div>Best Bet of the Day</div>
-      <div>✓</div>
-      <div>✓</div>
-    </div>
+      .eyebrow {
+        font-size: 0.66rem;
+        padding: 9px 14px;
+        margin-bottom: 20px;
+      }
 
-    <div class="comparison-row">
-      <div>Discord Access</div>
-      <div>✓</div>
-      <div>✓</div>
-    </div>
+      .hero h1 {
+        font-size: clamp(3.1rem, 17vw, 5.1rem);
+        line-height: 1.04;
+      }
 
-    <div class="comparison-row">
-      <div>Results Tracking</div>
-      <div>✓</div>
-      <div>✓</div>
-    </div>
+      .hero-subtitle { margin-top: 28px; }
 
-    <div class="comparison-row">
-      <div>Premium Daily Card</div>
-      <div>—</div>
-      <div>✓</div>
-    </div>
+      .hero-actions {
+        flex-direction: column;
+        margin-top: 28px;
+      }
 
-    <div class="comparison-row">
-      <div>Confidence Ratings</div>
-      <div>—</div>
-      <div>✓</div>
-    </div>
+      .btn { width: 100%; }
 
-    <div class="comparison-row">
-      <div>Model Edge Analysis</div>
-      <div>—</div>
-      <div>✓</div>
-    </div>
+      .sports-strip {
+        font-size: 0.66rem;
+        letter-spacing: 0.12em;
+        line-height: 1.8;
+      }
 
-    <div class="comparison-row">
-      <div>Full Matchup Research</div>
-      <div>—</div>
-      <div>✓</div>
-    </div>
+      .features { grid-template-columns: 1fr; }
 
-    <div class="comparison-row">
-      <div>Real-Time Alerts</div>
-      <div>—</div>
-      <div>✓</div>
-    </div>
+      .feature-card { min-height: auto; }
 
-  </div>
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
 
-</section>
+<body>
+  <div class="site-shell">
 
-<!-- WHY BETLABIQ -->
-
-<section class="founder-section">
-
-  <div class="founder-card">
-
-    <span class="section-tag">
-      WHY BETLABIQ EXISTS
-    </span>
-
-    <h2>
-      Built For Bettors Who Want Data, Not Hype.
-    </h2>
-
-    <p>
-      Too much sports betting content revolves around hot takes,
-      fake records, and "guaranteed locks."
-    </p>
-
-    <p>
-      BetLabIQ was built to provide a more disciplined approach using
-      statistical models, matchup analysis, market evaluation,
-      and transparent tracking.
-    </p>
-
-    <div class="founder-highlight">
-      No fake records. No lock culture. No nonsense.
-      Just data-driven betting insights.
-    </div>
-
-  </div>
-
-</section>
-
-<!-- PRICING -->
-
-<section id="pricing" class="pricing-section">
-
-  <div class="pricing-header">
-
-    <h2>
-      Join <span>BetLabIQ</span>
-    </h2>
-
-    <p>
-      Start free today. Upgrade when you're ready for full access to premium plays, model insights, confidence ratings, and real-time alerts.
-    </p>
-
-  </div>
-
-  <div class="pricing-grid">
-
-    <article class="pricing-card">
-
-      <div>
-
-        <div class="plan-head">
-          <h3>Weekly</h3>
-          <span class="daily-badge">$2.86 / Day</span>
-        </div>
-
-        <p class="plan-desc">
-          Perfect for testing the premium experience.
-        </p>
-
-        <div class="price">
-          $20<span>/week</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <ul>
-          <li>Daily premium picks</li>
-          <li>Model-backed research</li>
-          <li>Confidence ratings</li>
-          <li>Premium Discord access</li>
-          <li>Real-time notifications</li>
-          <li>Cancel anytime</li>
-        </ul>
-
-      </div>
-
-      <a class="plan-btn dark"
-         href="https://whop.com/betlabiq"
-         target="_blank">
-         Join Weekly
+    <header class="navbar">
+      <a href="https://whop.com/betlabiq" class="brand" target="_blank" rel="noopener">
+        BetLab<span>IQ</span>
       </a>
 
-    </article>
+      <nav class="nav-links">
+        <a href="#features">Why Us</a>
+        <a href="#pricing">Pricing</a>
+        <a href="https://whop.com/betlabiq" target="_blank" rel="noopener">Join</a>
+      </nav>
 
-    <article class="pricing-card featured">
+      <a class="nav-cta" href="https://whop.com/betlabiq" target="_blank" rel="noopener">
+        See All Plans
+      </a>
+    </header>
 
-      <div>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">
+            DATA DRIVEN • RESEARCH BACKED • BUILT FOR SERIOUS BETTORS
+          </div>
 
-        <div class="plan-head">
-          <h3>Monthly</h3>
-          <span class="daily-badge">Most Popular</span>
+          <h1>
+            <span class="white">Smarter Data.</span>
+            <span class="gradient-text">Stronger Profits.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            BetLabIQ turns advanced sports research into clear, confident betting insights —
+            with free community picks and premium model-backed plays.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-secondary" href="https://discord.gg/dbKEv6MHD" target="_blank" rel="noopener">
+              Join Free Discord
+            </a>
+            <a class="btn btn-primary" href="https://whop.com/betlabiq" target="_blank" rel="noopener">
+              View Premium Plans
+            </a>
+          </div>
+
+          <div class="sports-strip">
+            NFL • NBA • MLB • NHL • UFC • WNBA
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="feature-card">
+          <h3>Data Driven</h3>
+          <p>Every pick is backed by research, market context, and a repeatable process.</p>
         </div>
 
-        <p class="plan-desc">
-          Best balance of value and flexibility.
+        <div class="feature-card">
+          <h3>Advanced Models</h3>
+          <p>Model-backed insights built to simplify the daily betting board.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Proven Results</h3>
+          <p>Transparent tracking, confidence ratings, and consistent accountability.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Community</h3>
+          <p>Built for serious bettors who want sharper research and better discussion.</p>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing-section">
+        <div class="pricing-header">
+          <h2>Join <span>BetLabIQ</span><br>and Start Winning Today</h2>
+          <p>
+            See all plans and join free before upgrading.
+            <a class="join-free-pill" href="https://discord.gg/dbKEv6MHD" target="_blank" rel="noopener">Join for free ↗</a>
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div>
+              <div class="plan-head">
+                <h3>Weekly</h3>
+                <span class="daily-badge">$2.86 per day</span>
+              </div>
+              <p class="plan-desc">Start instantly with short-term access to premium picks and research.</p>
+              <div class="price">$20<span>/per week</span></div>
+              <div class="divider"></div>
+              <ul>
+                <li>Daily premium picks</li>
+                <li>Model-backed research</li>
+                <li>Confidence ratings</li>
+                <li>Premium Whop access</li>
+                <li>Short-term access</li>
+                <li>Best for testing premium</li>
+              </ul>
+            </div>
+            <a class="plan-btn dark" href="https://whop.com/betlabiq" target="_blank" rel="noopener">Join BetLabIQ</a>
+          </article>
+
+          <article class="pricing-card featured">
+            <div>
+              <div class="plan-head">
+                <h3>Monthly</h3>
+                <span class="daily-badge">$1.67 per day</span>
+              </div>
+              <p class="plan-desc">Save more with monthly access for daily research and consistent edge.</p>
+              <div class="price">$50<span>/per month</span></div>
+              <div class="divider"></div>
+              <ul>
+                <li>Everything in Weekly</li>
+                <li>Full monthly access</li>
+                <li>Deeper matchup notes</li>
+                <li>Premium member role</li>
+                <li>Model-backed insights</li>
+                <li>Best for active bettors</li>
+              </ul>
+            </div>
+            <a class="plan-btn featured-btn" href="https://whop.com/betlabiq" target="_blank" rel="noopener">Join BetLabIQ</a>
+          </article>
+
+          <article class="pricing-card">
+            <div>
+              <div class="plan-head">
+                <h3>Yearly</h3>
+                <span class="daily-badge">$0.55 per day</span>
+              </div>
+              <p class="plan-desc">Our best value for long-term access to the full BetLabIQ system.</p>
+              <div class="price">$200<span>/per year</span></div>
+              <div class="divider"></div>
+              <ul>
+                <li>Everything in Monthly</li>
+                <li>Yearly premium access</li>
+                <li>Best value pricing</li>
+                <li>Long-term model tracking</li>
+                <li>Future model releases</li>
+                <li>Best for serious bettors</li>
+              </ul>
+            </div>
+            <a class="plan-btn dark" href="https://whop.com/betlabiq" target="_blank" rel="noopener">Join BetLabIQ</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <div class="footer-brand">BetLab<span>IQ</span></div>
+        <p>
+          Copyright © 2026 BetLabIQ. All rights reserved. This service is meant for entertainment
+          purposes only. If you or someone you know has a gambling problem and wants help,
+          call 1-800-GAMBLER. BetLabIQ is intended for adult users that are 18+ only.
         </p>
-
-        <div class="price">
-          $50<span>/month</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <ul>
-          <li>Everything in Weekly</li>
-          <li>Full premium card access</li>
-          <li>Deeper matchup analysis</li>
-          <li>Premium Discord role</li>
-          <li>Best value for active bettors</li>
-          <li>Priority future features</li>
-        </ul>
-
       </div>
 
-      <a class="plan-btn featured-btn"
-         href="https://whop.com/betlabiq"
-         target="_blank">
-         Join Monthly
-      </a>
+      <div class="footer-socials">
+        <a class="social-icon" href="https://google.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.7 1.7a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+        </a>
 
-    </article>
+        <a class="social-icon" href="https://google.com" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.4l-5-7.5L5.3 22H2.1l7.4-8.5L1.8 2h6.6l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.5 3.9H5.7L17.8 20Z"/></svg>
+        </a>
 
-    <article class="pricing-card">
-
-      <div>
-
-        <div class="plan-head">
-          <h3>90 Days</h3>
-          <span class="daily-badge">Best Value</span>
-        </div>
-
-        <p class="plan-desc">
-          Lock in savings and long-term access.
-        </p>
-
-        <div class="price">
-          $100<span>/90 days</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <ul>
-          <li>Everything in Monthly</li>
-          <li>Maximum savings</li>
-          <li>Future model releases</li>
-          <li>Long-term results tracking</li>
-          <li>Founding member pricing</li>
-          <li>Best for serious bettors</li>
-        </ul>
-
+        <a class="social-icon" href="https://whop.com/betlabiq/" target="_blank" rel="noopener" aria-label="Whop">
+          <svg viewBox="0 0 24 24"><path d="M4 4h3.2l2.1 9.6L12 4h2.7l2.6 9.6L19.4 4H23l-4.2 16h-3.1L13.3 11 10.8 20H7.7L4 4Z"/></svg>
+        </a>
       </div>
-
-      <a class="plan-btn dark"
-         href="https://whop.com/betlabiq"
-         target="_blank">
-         Join 90 Days
-      </a>
-
-    </article>
+    </footer>
 
   </div>
-
-</section>
-
-<!-- FAQ -->
-
-<section class="faq-section">
-
-  <div class="pricing-header">
-
-    <span class="section-tag">
-      FREQUENTLY ASKED QUESTIONS
-    </span>
-
-    <h2>
-      Questions Before Joining?
-    </h2>
-
-  </div>
-
-  <div class="faq-grid">
-
-    <div class="faq-item">
-      <h3>Are picks guaranteed?</h3>
-      <p>No. Sports betting involves risk and no outcome is guaranteed.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>How are picks selected?</h3>
-      <p>Every play is backed by statistical analysis, matchup research, and market evaluation.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Do you track results?</h3>
-      <p>Yes. Transparency and accountability are core principles of BetLabIQ.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I join for free?</h3>
-      <p>Yes. Every user can join the free Discord community.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>What do premium members receive?</h3>
-      <p>Premium members receive the full card, confidence ratings, model insights, and alerts.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I cancel anytime?</h3>
-      <p>Yes. Memberships can be cancelled at any time.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<footer class="footer">
-
-  <div class="footer-left">
-
-    <div class="footer-brand">
-      BetLab<span>IQ</span>
-    </div>
-
-    <p>
-      Data-driven sports betting insights powered by research,
-      statistical modeling, and transparent results tracking.
-    </p>
-
-    <br>
-
-    <p>
-      Copyright © 2026 BetLabIQ.
-      All rights reserved.
-      18+ Only.
-      Gambling Problem? Call 1-800-GAMBLER.
-    </p>
-
-  </div>
-
-</footer>
-
-</main>
-
-</div>
-
 </body>
 </html>
